@@ -22,7 +22,7 @@ const InputData = ({ InputDiv, setInputDiv, fetchTasks, UpdatedData, setUpdatedD
         }
         else {
             console.log(Data)
-            const response = await axios.post("http://localhost:3000/api/tasks/create-task", Data, { headers })
+            const response = await axios.post("https://task-manager-backend-8cyi.onrender.com/api/tasks/create-task", Data, { headers })
             if (response.data.message === "Task Created") {
                 setData({ title: "", desc: "", due: "" })
                 setInputDiv("hidden")
@@ -37,7 +37,7 @@ const InputData = ({ InputDiv, setInputDiv, fetchTasks, UpdatedData, setUpdatedD
             alert("All fields are required")
         }
         else {
-            const response = await axios.put(`http://localhost:3000/api/tasks/update-task/${UpdatedData.id}`, Data, { headers })
+            const response = await axios.put(`https://task-manager-backend-8cyi.onrender.com/api/tasks/update-task/${UpdatedData.id}`, Data, { headers })
             setUpdatedData({
                 id: "", title: "", desc: ""
             })
